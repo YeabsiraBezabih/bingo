@@ -14,7 +14,7 @@ import javafx.util.Duration;
 public class BingoGUI extends Application {
 
     private Stage primaryStage;
-     private static final int MIN_WIDTH = 1300;
+    private static final int MIN_WIDTH = 1300;
     private static final int MIN_HEIGHT = 730;
 
     @Override
@@ -24,10 +24,10 @@ public class BingoGUI extends Application {
         showStartPage();
     }
 
-     private void transitionScene(Scene scene, Pane root) {
+    private void transitionScene(Scene scene, Pane root) {
     primaryStage.setScene(scene);
         primaryStage.show();
-     primaryStage.setMaximized(true);
+    primaryStage.setMaximized(true);
         FadeTransition ft = new FadeTransition(Duration.millis(300), root);
       ft.setFromValue(0);
       ft.setToValue(1);
@@ -36,7 +36,7 @@ public class BingoGUI extends Application {
 
 
     private void setInitialWindowPosition(Scene scene) {
-         primaryStage.setScene(scene);
+        primaryStage.setScene(scene);
         Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
         double centerX = screenBounds.getMinX() + (screenBounds.getWidth() - MIN_WIDTH) / 2;
         double centerY = screenBounds.getMinY() + (screenBounds.getHeight() - MIN_HEIGHT) / 2;
@@ -44,21 +44,21 @@ public class BingoGUI extends Application {
         primaryStage.setY(centerY);
         primaryStage.setMinWidth(MIN_WIDTH);
         primaryStage.setMinHeight(MIN_HEIGHT);
-       if (!primaryStage.isMaximized()){
+      if (!primaryStage.isMaximized()){
           primaryStage.show();
         }
     }
 
 
   private void setFullScreen(Scene scene){
-     primaryStage.setScene(scene);
-     primaryStage.show();
+    primaryStage.setScene(scene);
+    primaryStage.show();
     primaryStage.setMaximized(true);
   }
     public void showStartPage() {
         StartPage startPage = new StartPage(this);
         Scene scene = new Scene(startPage.getRoot());
-         primaryStage.setTitle("Bingo App");
+        primaryStage.setTitle("Bingo App");
         setFullScreen(scene);
         transitionScene(scene, startPage.getRoot());
 
