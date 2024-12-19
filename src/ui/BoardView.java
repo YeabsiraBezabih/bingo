@@ -14,11 +14,13 @@ public class BoardView {
     private Board board;
     private boolean isUserBoard;
     private GameController gameController;
+    private boolean isVsAI;
 
     public BoardView(Board board, boolean isUserBoard, GameController gameController) {
         this.board = board;
         this.isUserBoard = isUserBoard;
         this.gameController = gameController;
+      this.isVsAI = gameController.getIsVsAI();
         createBoardView();
     }
 
@@ -28,7 +30,7 @@ public class BoardView {
         gridPane.setVgap(8);
         gridPane.setAlignment(Pos.CENTER);
         BorderPane.setMargin(gridPane, new Insets(10));
-         gridPane.setStyle("-fx-background-color: #f0f0f0; -fx-padding: 10; -fx-border-color: #ccc; -fx-border-width: 2;");
+        gridPane.setStyle("-fx-background-color: #f0f0f0; -fx-padding: 10; -fx-border-color: #ccc; -fx-border-width: 2;");
         displayCard();
     }
 
@@ -43,22 +45,21 @@ public class BoardView {
         button.setStyle("-fx-background-radius: 5; -fx-border-radius: 5;");
         int finalRow = row;
         int finalCol = col;
-        if (isUserBoard) {
-          button.setOnAction(event -> markNumber(finalRow, finalCol));
-        } else {
-            if (gameController.getIsVsAI()){
-               button.setDisable(true);
-            } else {
-               button.setOnAction(event -> markNumber(finalRow, finalCol));
-           }
-        }
-          gridPane.add(button, col, row);
+        button.setOnAction(event -> markNumber(finalRow, finalCol));
+         if (isVsAI == false && !isUserBoard){
+           button.setDisable(false);
+        }else if (isVsAI && !isUserBoard){
+             button.setDisable(true);
+          }
+        gridPane.add(button, col, row);
       }
     }
   }
 
     private void markNumber(int row, int col) {
-        gameController.handleNumberClick(row, col, this);
+         if (!board.isMarked(row, col)){
+              gameController.handleNumberClick(row, col, this);
+          }
     }
 
 
@@ -68,13 +69,13 @@ public class BoardView {
                 Button button = (Button) gridPane.getChildren().get(row * 5 + col);
                 if (board.isMarked(row, col)) {
                     button.setStyle("-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 5; -fx-border-radius: 5;");
-                     button.setFont(Font.font(16));
+                    button.setFont(Font.font(16));
                     if (board.getGrid()[row][col] == 0) {
                         button.setText("FREE");
                     }
                 } else {
-                   button.setStyle("-fx-background-radius: 5; -fx-border-radius: 5;");
-                    button.setFont(Font.font(16));
+                    button.setStyle("-fx-background-radius: 5; -fx-border-radius: 5;");
+                      button.setFont(Font.font(16));
                 }
             }
         }
