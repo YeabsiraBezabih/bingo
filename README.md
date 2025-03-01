@@ -34,7 +34,7 @@ Bingo Bash is a Java-based application that brings the classic game of Bingo to 
 
 ## Screenshot
 
-![Game Screenshot](/Screenshot 2025-03-01 142927.png)
+![Game Screenshot](bingo/Screenshot 2025-03-01 142927.png)
 
 
 
