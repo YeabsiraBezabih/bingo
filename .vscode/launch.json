@@ -4,11 +4,19 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-
+    {
+      "type": "java",
+      "name": "BingoGUI",
+      "request": "launch",
+      "vmArgs": "--module-path \"C:/javafx-sdk-23.0.1/lib\" --add-modules javafx.controls,javafx.fxml",
+      "mainClass": "ui.BingoGUI",
+      "projectName": "bingo_391c6194"
+    },
     {
       "type": "java",
       "name": "Current File",
       "request": "launch",
+      "vmArgs": "--module-path \"C:/javafx-sdk-23.0.1/lib\" --add-modules javafx.controls,javafx.fxml",
       "mainClass": "${file}"
     },
     {
@@ -16,7 +24,10 @@
       "name": "BingoGUI",
       "request": "launch",
       "vmArgs": "--module-path \"C:/javafx-sdk-23.0.1/lib\" --add-modules javafx.controls,javafx.fxml",
-"programArguments": ["--module-path", "C:/javafx-sdk-23.0"],
+      "programArguments": [
+        "--module-path",
+        "C:/javafx-sdk-23.0"
+      ],
       "mainClass": "ui.BingoGUI",
       "projectName": "bingo_e513fe03"
     }
