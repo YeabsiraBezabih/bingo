@@ -42,23 +42,22 @@ Bingo Bash is a Java-based application that brings the classic game of Bingo to 
 
 The project's folder structure is organized as follows:
 
-
 BingoApp/
 ├── src/
-│ └── ui/
-│ ├── BoardView.java // Class for displaying and managing a single Bingo board
-│ ├── BingoGUI.java // Main JavaFX class for the user interface
-│ ├── ChoicePage.java // Class for the choice page
-│ ├── ControlPanel.java // Class to manage the UI and interactions
-│ ├── GameController.java // Class to manage the overall game flow
-│ └── StartPage.java // Class for the start page
-│ └── game/
-│ ├── AIPlayer.java // Class for the AI player logic
-│ ├── Board.java // Class for the Bingo board logic (5x5 grid)
-│ ├── Game.java // Class for managing game flow
-│ ├── NumberGenerator.java// Class for generating random numbers
-│ └── Player.java // Class to represent a player (AI or human)
-└── README.md // This file
+│   └── ui/
+│       ├── BoardView.java      // Class for displaying and managing a single Bingo board
+│       ├── BingoGUI.java       // Main JavaFX class for the user interface
+│       ├── ChoicePage.java     // Class for the choice page
+│       ├── ControlPanel.java   // Class to manage the UI and interactions
+│       ├── GameController.java // Class to manage the overall game flow
+│       └── StartPage.java      // Class for the start page
+│   └── game/
+│       ├── AIPlayer.java       // Class for the AI player logic
+│       ├── Board.java         // Class for the Bingo board logic (5x5 grid)
+│       ├── Game.java          // Class for managing game flow
+│       ├── NumberGenerator.java // Class for generating random numbers
+│       └── Player.java        // Class to represent a player (AI or human)
+└── README.md                  // This file
 
 
 
