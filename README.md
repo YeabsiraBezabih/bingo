@@ -41,7 +41,7 @@ Bingo Bash is a Java-based application that brings the classic game of Bingo to 
 ## Folder Structure
 
 The project's folder structure is organized as follows:
-
+```
 BingoApp/
 ├── src/
 │   └── ui/
@@ -59,7 +59,7 @@ BingoApp/
 │       └── Player.java        // Class to represent a player (AI or human)
 └── README.md                  // This file
 
-
+```
 
 *   **`src/ui/`:** Contains the JavaFX source code for the user interface.
 *   **`src/game/`:** Contains the source code for the core game logic.
